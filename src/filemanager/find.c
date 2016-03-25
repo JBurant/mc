@@ -599,12 +599,9 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
         file_name_label = _(file_name_label);
         file_recurs_label = _(file_recurs_label);
-//<<<<<<< HEAD
         file_pattern_label = _(file_pattern_label);
-//=======
         file_skip_hidden_label = _(file_skip_hidden_label);
 	file_only_directories_label = _(file_only_directories_label);
-//>>>>>>> osp/only-directories
 #ifdef HAVE_CHARSET
         file_all_charsets_label = _(file_all_charsets_label);
 #endif
@@ -709,15 +706,12 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
     in_with->label = content_label;
     add_widget (find_dlg, in_with);
 
-//<<<<<<< HEAD
     /* Continue 1st column */
     recursively_cbox = check_new (y1++, x1, options.find_recurs, file_recurs_label);
     add_widget (find_dlg, recursively_cbox);
-//=======
 
     only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
     add_widget (find_dlg, only_directories_cbox);
-//>>>>>>> osp/only-directories
 
     file_pattern_cbox = check_new (y1++, x1, options.file_pattern, file_pattern_label);
     add_widget (find_dlg, file_pattern_cbox);
@@ -1382,11 +1376,8 @@ do_search (WDialog * h)
                     tmp_vpath = vfs_path_build_filename (directory, dp->d_name, (char *) NULL);
 
                     if (mc_lstat (tmp_vpath, &tmp_stat) == 0 && S_ISDIR (tmp_stat.st_mode))
-//<<<<<<< HEAD
-//=======
                     {
 			is_dir = TRUE;
-//>>>>>>> osp/only-directories
                         push_directory (tmp_vpath);
 }
                     else
